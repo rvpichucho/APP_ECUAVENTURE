@@ -8,10 +8,12 @@ class LoginBloc with Validator {
   final _emailController = BehaviorSubject<String>();
   final _passwordController = BehaviorSubject<String>();
 
+    Stream<String> get passwordStream =>
+      _passwordController.stream.transform(passwordValidator);
+
   Stream<String> get emailStream =>
       _emailController.stream.transform(emailValidator);
-  Stream<String> get passwordStream =>
-      _passwordController.stream.transform(passwordValidator);
+
 
   Stream<bool> get loginValidStream =>
       Rx.combineLatest2(emailStream, passwordStream, (a, b) => true);
@@ -20,6 +22,7 @@ class LoginBloc with Validator {
   Function(String) get changePassword => _passwordController.sink.add;
 
   String get email => _emailController.value;
+
   String get password => _passwordController.value;
 
   dispose() {
