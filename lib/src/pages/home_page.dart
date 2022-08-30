@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ecuaventure/src/utils/colors_constants.dart' as color_const;
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatefulWidget { 
   const HomePage({Key? key}) : super(key: key);
 
   @override
