@@ -32,7 +32,7 @@ class _BikePageState extends State<BikePage> {
   }
 }*/
 
-class BikePage extends StatelessWidget {
+class BikePage extends StatelessWidget { 
   const BikePage({Key? key, required this.reservation}) : super(key: key);
   final Bikes reservation;
 
